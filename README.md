@@ -21,6 +21,4 @@ Before you run the script you must have:
 ```bash
 # Install Dependencies
 $ pip install tabulate BeautifulSoup
-# Run Script
-$ python analytics.py
 ```
