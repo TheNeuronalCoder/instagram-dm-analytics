@@ -14,9 +14,9 @@ If you go into `Settings > Security` in Instagram you can request to download al
 ## Install Dependences
 
 Before you run the script you must have:
- - tabulate to form the formatted tables
- and
- - BeautifulSoup to parse HTML files
+ - `tabulate` for formatting tables
+ - `NRCLex` for natural language processing
+ - `BeautifulSoup` for parsing HTML files
  
 ```bash
 # Install Dependencies
