@@ -10,19 +10,24 @@ def load_data():
   print('Loading DM Data...')
   data = {}
 
+  my_info = BeautifulSoup(
+              open(f'{os.getcwd()}/account_information/personal_information.html', 'r').read(), 'lxml'
+            ).find_all('tr', class_='_51mx')
+  my_name = next(filter(lambda x: x.find('td', class_='_51m- vTop _2pin _2oao').text == 'Name', my_info))
+  my_name = my_name.find('td', '_51m- vTop _2pin _2piu _23bw _51mw').text
+  os.chdir('messages/inbox')
+
   for username in os.listdir(os.getcwd()):
     if os.path.isdir(username):
-      dms = {}
       messages = [BeautifulSoup(open(file, 'r').read(), 'lxml')
                   for file in glob.glob(f'{os.getcwd()}/{username}/message_*.html')]
-      dms['me'] = []
-      dms['other'] = []
 
+      dms = { 'me': [], 'other': [] }
       for dm in sum([msg.find_all('div', class_='pam _3-95 _2ph- _2lej uiBoxWhite noborder') for msg in messages], []):
         if dm.find('div', class_='_3-95 _2let'):
           text = dm.find('div', class_='_3-95 _2let').find('div').find_all('div')[1].text
           if len(text) and not text.endswith(' '):
-            if dm.find('div', class_='_3-95 _2pim _2lek _2lel').text == 'candy slut':
+            if dm.find('div', class_='_3-95 _2pim _2lek _2lel').text == my_name:
               dms['me'].append(text)
             else:
               dms['other'].append(text)
@@ -60,10 +65,7 @@ def emotion_rank(emotion, sender):
   return rank(lambda dms: NRCLex(' '.join(dms['me']+dms['other'] if sender=='both' else dms[sender])).affect_frequencies.get(emotion, 0))
 
 if __name__ == "__main__":
-  os.chdir('messages/inbox')
-
   data = load_data()
-
   print(tabulate(
     [[r+1,
       f'{(a["name"][:15] + "...") if len(a["name"]) > 15 else a["name"]} ({a["count"]} texts)',
