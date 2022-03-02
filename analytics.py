@@ -21,7 +21,7 @@ def load_data():
       for dm in sum([msg.find_all('div', class_='pam _3-95 _2ph- _2lej uiBoxWhite noborder') for msg in messages], []):
         if dm.find('div', class_='_3-95 _2let'):
           text = dm.find('div', class_='_3-95 _2let').find('div').find_all('div')[1].text
-          if len(text) and not (text.startswith('Reacted ') and text.endswith(' to your message ')):
+          if len(text) and not text.endswith(' '):
             if dm.find('div', class_='_3-95 _2pim _2lek _2lel').text == 'candy slut':
               dms['me'].append(text)
             else:
