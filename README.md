@@ -20,5 +20,5 @@ Before you run the script you must have:
  
 ```bash
 # Install Dependencies
-$ pip install tabulate BeautifulSoup
+$ pip install tabulate NRCLex BeautifulSoup
 ```
