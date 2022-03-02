@@ -77,6 +77,6 @@ if __name__ == "__main__":
                                 word_count_rank(),
                                 query_count_rank('LMAO', 'LOL', 'HAHA', sender='other'),
                                 emotion_rank('joy', sender='me'))],
-    headers=['Rank', 'Invidiual Texts', 'Character Count', 'Word Count', 'Laugh Count', 'Disgust'],
+    headers=['Rank', 'Invidiual Texts', 'Character Count', 'Word Count', 'Laugh Count', 'Joy'],
     tablefmt='fancy_grid'
   ))
