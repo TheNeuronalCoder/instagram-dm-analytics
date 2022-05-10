@@ -1,7 +1,7 @@
 instagram dm analytics
 ======================
 
-Simple python script which ranks the people you DM on instagram through various metrics.
+Simple python script which ranks the people you message on instagram through various metrics.
 
 ```bash
 $ python analytics.py
