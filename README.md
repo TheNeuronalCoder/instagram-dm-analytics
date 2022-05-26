@@ -20,5 +20,8 @@ Before you run the script you must have:
  
 ```bash
 # Install Dependencies
-$ pip install tabulate NRCLex beautifulsoup4
+$ pip install tabulate NRCLex beautifulsoup4 nltk
+$ python
+>>> import nltk
+>>> nltk.download('punkt')
 ```
