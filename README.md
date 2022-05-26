@@ -14,11 +14,11 @@ If you go into `Settings > Security` in Instagram you can request to download al
 ## Install Dependences
 
 Before you run the script you must have:
- - [`tabulate`](https://pypi.org/project/tabulate/) for formatting tables
- - [`NRCLex`](https://pypi.org/project/NRCLex/) for natural language processing
- - [`BeautifulSoup`](https://pypi.org/project/beautifulsoup4/) for parsing HTML files
+ - [`tabulate`](https://pypi.org/project/tabulate) for formatting tables
+ - [`NRCLex`](https://pypi.org/project/NRCLex) for natural language processing
+ - [`BeautifulSoup`](https://pypi.org/project/beautifulsoup4) for parsing HTML files
  
 ```bash
 # Install Dependencies
-$ pip install tabulate NRCLex BeautifulSoup
+$ pip install tabulate NRCLex beautifulsoup4
 ```
